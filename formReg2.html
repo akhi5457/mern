@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="regFormStyleSheet.css">
+</head>
+
+<body>
+    <div class="form">
+        <form>
+            <input type="text" name="fname" placeholder="full name"><br><br>
+            <input type="email" name="email" placeholder="email"><br><br>
+            <input type="tel" name="mobile" placeholder="mobile"><br><br>
+            <select name="state">
+                <option value="">select state</option>
+                <option value="kerala">kerala</option>
+                <option value="karnataka">karnataka</option>
+                <option value="tamilNadu">tamilNadu</option>
+            </select><br><br>
+            <textarea name="address" cols="30px" rows="10px"></textarea><br><br>
+            <label for="male">male</label>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="female">female</label>
+            <input type="radio" name="gender" value="female" id="female"><br><br>
+            <label>skills</label><br>
+            <label for="PHP">PHP</label>
+            <input type="checkbox" name="php" value="php" id="PHP">
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="html" value="html" id="HTML">
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="css" value="css" id="CSS"><br><br>
+            <button>submit</button>
+            <!-- <div class="alert-box">
+                <p>successfully completed</p>
+            </div> -->
+            <script>
+                let btn = document.querySelector('button')
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    let alert = document.createElement('div')
+                    alert.className = 'alert-box'
+                    let message=document.createElement('p')
+                    message.innerText="successfully completed"
+                    document.body.appendChild(alert)
+                    alert.appendChild(message)
+                    let fname, email, mobile, state, address, gender, skills;
+                    fname = document.querySelector('input[name="fname"]').value
+                    email = document.querySelector('input[name="email"]').value
+                    mobile = document.querySelector('input[name="mobile"]').value
+                    state = document.querySelector('select').value
+                    address = document.querySelector('textarea').value
+                    gender = document.querySelector('input[name="gender"]:checked')
+                    genderValue = gender ? gender.value : "no gender choosed"
+                    skills = document.querySelectorAll('input[type="checkbox"]:checked')
+                    let newSkillArray = [];
+                    skills.forEach(items => items ? newSkillArray.push(items.value) : "")
+                    console.log(`fname: ${fname}`);
+                    console.log(`email: ${email}`);
+                    console.log(`mobile: ${mobile}`);
+                    console.log(`state: ${state}`);
+                    console.log(`address: ${address}`);
+                    console.log(`gender: ${genderValue}`)
+                    console.log(`skills: ${newSkillArray}`)
+                })
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>

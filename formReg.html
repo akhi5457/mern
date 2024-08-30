@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <input type="text" name="fname" placeholder="full name">
+            <br><br>
+            <input type="email" name="email" placeholder="email">
+            <br><br>
+            <input type="tel" name="mobile" placeholder="mobile">
+            <br><br>
+            <select name="state">
+                <option value="">select state</option>
+                <option value="kerala">kerala</option>
+                <option value="tamilnadu">tamilNadu</option>
+                <option value="karnataka">karnataka</option>
+            </select>
+            <br><br>
+            <!-- <label>address</label> -->
+            <textarea name="address" cols="30" rows="5" placeholder="enter your address"></textarea>
+            <br><br>
+            <label for="male">male</label>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="female">female</label>
+            <input type="radio" name="gender" value="female" id="female">
+            <br><br>
+            <label>skills</label>
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="HTML" value="HTML" id="HTML">
+
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="CSS" value="CSS" id="CSS">
+
+            <label for="JAVASCRIPT">JAVASCRIPT</label>
+            <input type="checkbox" name="JAVASCRIPT" value="JAVASCRIPT" id="JAVASCRIPT">
+            <br><br>
+            <button>submit</button>
+        </form>
+    </div>
+    <style>
+        body {
+            margin-top: 10%;
+        }
+
+        div {
+            border: 1px solid black;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow:0 0 5px rgb(77, 72, 72);
+        }
+        div:hover{
+            transform: scale(1.05);
+
+        }
+
+        form {
+            margin: 10px;
+        }
+    </style>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            let fname, email, mobile, state, address, gender, skills;
+            fname = document.querySelector('input[name="fname"]').value
+            email = document.querySelector('input[name="email"]').value
+            mobile = document.querySelector('input[name="mobile"]').value
+            state = document.querySelector('select').value
+            address = document.querySelector('textarea').value
+            gender = document.querySelector('input[name="gender"]:checked')
+            genderValue = gender ? gender.value : "no gender choosed"
+            skills = document.querySelectorAll('input[type="checkbox"]:checked')
+            let newSkillArray = [];
+            skills.forEach(items => items ? newSkillArray.push(items.value) : "")
+            console.log(`fname: ${fname}`);
+            console.log(`email: ${email}`);
+            console.log(`mobile: ${mobile}`);
+            console.log(`state: ${state}`);
+            console.log(`address: ${address}`);
+            console.log(`gender: ${genderValue}`)
+            console.log(`skills: ${newSkillArray}`)
+        })
+
+    </script>
+</body>
+
+</html>

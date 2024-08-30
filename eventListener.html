@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button >play</button>
+
+    <script>
+        const button=document.querySelector('button')
+        document.querySelector('button').style.borderRadius='50px';
+        button.addEventListener('dblclick',(event)=>{
+            console.log("event details:",event);
+            console.log("event target:",event.target);
+            console.log("event text content:",event.target.innerText)
+            if(event.target.innerText=='play'){
+                event.target.innerText='pause';
+            }
+            else{
+                event.target.innerText='play'
+            }
+        })
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="firstname" placeholder="enter your name">
+        <span><sup style="color:red">*</sup></span>
+        <div></div>
+    </form>
+
+    <script>
+       const fError= document.querySelector('#firstname')
+       const tError=document.querySelector('div')
+       fError.addEventListener('blur',(e)=>{
+        let tvalue=e.target.value
+        console.log(tvalue);
+        if(tvalue==""){
+            tError.style.color="red";
+            tError.innerHTML='field required';
+        }
+        else{
+            tError.style.color="rgb(33, 221, 74)";
+            tError.innerHTML='good';
+        }                     
+       })
+    </script>
+</body>
+</html> -->
+
+

@@ -1,0 +1,53 @@
+body {
+    margin-top: 10%;
+    background-color: rgb(206, 206, 206);
+}
+
+.form {
+    border: 1px solid black;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 5px 15px 10px rgb(77, 72, 72);
+    background-color: rgb(224, 224, 224);
+}
+
+.form:hover {
+    transform: scale(1.05);
+
+}
+
+form {
+    margin: 10px;
+}
+
+input,
+button,
+select,
+textarea {
+    background-color: rgb(233, 232, 232);
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(65, 64, 64);
+    color: white;
+}
+
+.alert-box {
+
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    width: 200px;
+    max-width: 200px;
+    height: 150px;
+    max-height: 100px;
+    border: 1px none black;
+    background-color: rgba(177, 171, 171, 0.575);
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    border-radius: 10px;
+
+}

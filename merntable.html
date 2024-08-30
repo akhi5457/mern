@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+  <tr>
+    <th>sno</th>
+    <th>name</th>
+    <th>age</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>akhil</td>
+    <td>21</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>abc</td>
+    <td>28</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td>hil</td>
+    <td>31</td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+<style>
+    table{
+        border-collapse: collapse;
+        /* border: 1px solid black; */
+        width: 500px;
+        height: 200px;
+        margin: 60px 50px ;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        
+    }
+    thead{
+        background-color: aqua;
+    }
+    th,td{
+        padding: 20px 20px   ;
+        text-align: center;
+        border-bottom: 1px solid black;
+        
+    }
+    /* th:nth-last-of-type(){
+        border-bottom: 1px solid blue;
+    } */
+    th:hover,td:hover{
+      background-color: rgb(0, 255, 136);
+    }
+    td:active{
+      background-color: rgb(236, 240, 7);
+    }
+    tr:nth-of-type(even){
+      background-color: rgb(168, 235, 213);
+    }
+</style>
+</html>

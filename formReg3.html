@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <form>
+            <input type="text" name="fname" placeholder="full name"><br><br>
+            <input type="email" name="email" placeholder="email"><br><br>
+            <input type="tel" name="mobile" placeholder="mobile"><br><br>
+            <select name="state">
+                <option value="">select state</option>
+                <option value="kerala">kerala</option>
+                <option value="karnataka">karnataka</option>
+                <option value="tamilNadu">tamilNadu</option>
+            </select><br><br>
+            <textarea name="address" cols="30px" rows="10px"></textarea><br><br>
+            <label for="male">male</label>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="female">female</label>
+            <input type="radio" name="gender" value="female" id="female"><br><br>
+            <label>skills:</label><br>
+            <label for="PHP">PHP</label>
+            <input type="checkbox" name="php" value="php" id="PHP">
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="html" value="html" id="HTML">
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="css" value="css" id="CSS"><br><br>
+            <button>submit</button>
+        </form>
+    </div>
+    <style>
+        body {
+            margin-top: 10%;
+            background-color: rgb(206, 206, 206);
+        }
+
+        .form {
+            border: 1px solid black;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 5px 15px 10px rgb(77, 72, 72);
+            background-color: rgb(224, 224, 224);
+        }
+
+        .form:hover {
+            transform: scale(1.05);
+
+        }
+
+        form {
+            margin: 10px;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            background-color: rgb(233, 232, 232);
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgb(65, 64, 64);
+            color: white;
+        }
+
+        .alert-box {
+
+            position: fixed;
+            top: 10px;
+            right: 50px;
+            width: 200px;
+            max-width: 200px;
+            height: 150px;
+            max-height: 100px;
+            border: 1px none black;
+            background-color: rgba(177, 171, 171, 0.575);
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+            border-radius: 10px;
+
+        }
+    </style>
+    <script>
+        let btn = document.querySelector('button');
+        let selectElement = (selector, message) => {
+            let data = document.querySelector(selector)
+            return (data == null || data.value == "") ? message : data.value
+        }
+        let selectElementAll = (selector,message) => {
+            let skills = document.querySelectorAll(selector)
+            // return (list.length > 0) ? list : ""
+            
+                let skillSet = []
+                if (skills.length > 0) {
+                    skills.forEach(items => { items ? skillSet.push(items.value) : "" })
+                    return(`skills: ${skillSet}`);
+                }
+                else {
+                    return message;
+
+                }
+            //  (skills.length>0)? skills.forEach(items=>{items? skillSet.push(items.value):'';return skillSet}):message
+            
+        }
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log('fname:', selectElement('input[name="fname"]', 'fname required'))
+            console.log('email:', selectElement('input[name="email"]', 'email required'))
+            console.log('mobile:', selectElement('input[name="mobile"]', 'mobile required'))
+            console.log('state:', selectElement('select[name="state"]', 'state required'))
+            console.log('address:', selectElement('textarea[name="address"]', 'address required'))
+            console.log('gender:', selectElement('input[name="gender"]:checked', 'gender required'))
+            console.log('skills',selectElementAll('input[type=checkbox]:checked','skills: no skills selected'))
+            // let skillSet = []
+            // if (skills.length > 0) {
+            //     skills.forEach(items => { items ? skillSet.push(items.value) : "" })
+            //     console.log(`skills: ${skillSet}`);
+            // }
+            // else {
+            //     console.log(`skills: no skills selected`);
+
+            // }
+        })
+    </script>
+</body>
+
+</html>

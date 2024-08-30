@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Src hospital</title>
+    <link rel="stylesheet" href="hospRegFormCSS.css">
+</head>
+<body>
+    <div class="register">
+    <div class="hosp-icon">
+        <h3 class="heading">New Patient Register Form</h3>
+        <div class="container">
+            <img src="images/surgeon.jpg" alt="Icon" class="icon">
+        </div>
+        <p>Are you a new Patient? <a href="hospitalFormGeg.html">Register Here</a>.</p>
+    </div>
+    <div class="form">
+        <form>
+            <label>patient's name:</label><span style="color: red;">*</span><br>
+            <input type="text" name="fname" placeholder="first">
+            <div class="fnameError"></div>
+            <input type="text" name="lname" placeholder="last"><br><br>
+            <div class="lnameError"></div>
+
+            <label>patient's DOB:</label><span style="color: red;">*</span><br>
+            <input type="date" name="dob" placeholder="DOB"><br><br>
+            <div class="dobError"></div>
+
+            
+            <label>patient's phone number:</label><span style="color: red;">*</span><br>
+            <input type="tel" name="mobile" placeholder="mobile number"><br><br>
+            <div class="mobileError"></div>
+
+
+            <label>patient's address:</label><span style="color: red;">*</span><br>
+            <textarea name="address" placeholder="enter your address" cols="20px" rows="5px"></textarea><br><br>
+            <div class="addressError"></div>
+
+
+            <label>please list any medicines your are currently taking:</label><span style="color: red;">*</span><br>
+            <textarea name="medicines" placeholder="enter here...."  cols="20px" rows="5px"></textarea><br><br>
+            <div class="medError"></div>
+
+
+            <label>please list any any allergies if you have:</label><span style="color: red;">*</span><br>
+            <textarea name="allergies" placeholder="enter here...."  cols="20px" rows="5px"></textarea><br><br>
+            <div class="allergiesError"></div>
+
+            
+            <label>do you consume alcohol:</label><span style="color: red;">*</span><br>
+            <label for="alco-yes">YES</label><input type="radio" name="alcohol" value="yes" id="alco-yes">
+            <label for="alco-no">NO</label><input type="radio" name="alcohol" value="no" id="alco-no"><br><br>
+            <div class="alcoError"></div>
+
+            <button>submit</button>
+        </form>
+    </div>
+</div>
+<script>
+let btn=document.querySelector('button');
+const selectElement=(selector)=>{
+    let data = document.querySelector(selector)
+    return (data == null || data.value == "") ? message : data.value
+}
+btn.addEventListener('click',(event)=>{
+    event.preventDefault()
+    fname=selectElement('input[name="fname"]','fname not entered')
+    if(fname=="fname not entered" || typeof fname!='string'){
+        let fvalue=document.querySelector('.fnameError');
+        fvalue.innerHTML="check the field!"
+        fvalue.style.color='red'
+        fvalue.style.fontSize='12px'
+        console.log('fname:',fname)
+    }
+    
+    lname=selectElement('input[name="lname"]','lname not entered')
+    if(lname=="fname not entered" || typeof fname!='string'){
+        let fvalue=document.querySelector('.lnameError');
+        fvalue.innerHTML="check the field!"
+        fvalue.style.color='red'
+        fvalue.style.fontSize='12px'
+        console.log('lname:',lname)
+    }
+
+    console.log('fname:',selectElement('input[name="age"]','age not entered'))
+    console.log('fname:',selectElement('input[name="mobile"]','mobile not entered'))
+    console.log('address:',selectElement('textarea[name="address"]','address not entered'))
+    console.log('medicines:',selectElement('textarea[name="medicines"]','medicines not entered'))
+    console.log('address:',selectElement('textarea[name="allergies"]','allergies not entered'))
+    console.log('address:',selectElement('input[name="alcohol"]:checked',"didn't select anything"))
+})
+</script>
+</body>
+</html>

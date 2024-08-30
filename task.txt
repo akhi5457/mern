@@ -1,0 +1,14 @@
+25/07
+
+1.find all the elements which contains the letter a
+2.convert all the elements of that array to uppercase
+3.convert all the elements of that array to lowercase
+4.find out the palindrome in that array
+5.sort the array based on ascending order
+6.sort the array based on descending order
+7.print the array by each character
+8.convert that array to string
+9.reverse the string inside the array
+
+
+5/8- style tables

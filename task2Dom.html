@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mrng" onclick="displayText(id)">Good morning</button>
+    <button id="after" onclick="displayText(id)">Good afternoon</button>
+    <button id="evening" onclick="displayText(id)">Good evening</button>
+    <button id="night" onclick="displayText(id)">Good night</button>
+
+    <p></p>
+    
+     
+     <script>
+       function displayText(id){
+        switch (id) {
+            case "mrng":
+                document.querySelector('p').innerHTML="good morning"
+                break;
+            case "after":
+                document.querySelector('p').innerHTML="good afternoon"
+                break;
+                case "evening":
+                document.querySelector('p').innerHTML="good evening"
+                break;
+                case "night":
+                document.querySelector('p').innerHTML="good night"
+                break;
+            default:
+                break;
+        } 
+            
+        }
+     </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <label>enter your name</label><input id="name" type="text" placeholder="ex. akhil george" value=""><br><br>
+        <button onclick="displayWelcome()">enter</button>
+    </div>
+    <!-- <p id="message"></p> -->
+    <div class="message"></div>
+    <script>
+        function displayWelcome() {
+
+            if (document.querySelector('#name').value != "") {
+                let p = document.createElement('p')
+                p.textContent = `welcome "${document.querySelector('#name').value}"`
+                document.querySelector('.message').appendChild(p)
+                document.querySelector('#name').value = ""
+
+            }
+
+        }
+    </script>
+    <style>
+        .container {
+            background-color: #C3C3C3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            padding: 10px;
+            max-width: 300px;
+            text-align: left;
+
+
+
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        button:hover {
+            background-color: aquamarine;
+        }
+
+        p {
+            font-size: larger;
+            background-color: beige;
+            max-width: 200px;
+            padding: 30px;
+        }
+    </style>
+</body>
+
+</html>

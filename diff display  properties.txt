@@ -1,0 +1,12 @@
+ -> h1,h2,h3,h4,h5,h6{
+        justify-content: center;
+        display: inline-block;            ----  same line with 20-30px down from the top 
+        margin-left: 10px;
+    }
+
+
+ -> display:block;    ---------- not in same line and starts after 20-30px down and starts from left side
+
+ -> display:flex;     ---------- not in same line and text aligned at center 
+ 
+ -> display:inline;   ---------- same line starts from the top  

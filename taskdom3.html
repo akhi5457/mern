@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid ;
+        }
+        bg{
+            background-color: aqua;
+        }
+        #img{
+            border: 2px solid black;
+            padding: 5px;
+            margin-left: 700px;
+            margin-top: 20px;
+            width: 500px;
+            height: 300px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>   <h1>GTA V</h1>
+        <img onmouseenter="imageChange()" id="img" src="./images/image1.jpg" onmouseleave="replaceImage()">
+    
+</div>    <script>
+        div = document.querySelector("div")
+        imageChange=()=>{
+            changeImage = document.querySelector("#img")
+            changeImage.setAttribute('src','./images/image2.jpg')
+            div.classList.add('bg')
+        }
+        replaceImage=()=>{
+            changeImage = document.querySelector("#img")
+            changeImage.setAttribute('src','./images/image1.jpg')
+        }
+    </script>
+</body>
+</html>

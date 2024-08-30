@@ -1,0 +1,59 @@
+body {
+    background-image: url('images/hosBackg.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+.register{
+    margin: auto;
+    max-width: 400px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    height: 100px;           /* Full viewport height */
+    margin: 0;               /* Remove default margin */
+}
+
+.icon {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+.form{
+    border: 1px solid rgb(116, 176, 190);
+    box-shadow: 5px 10px 10px black;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(182, 208, 238, 0.39);
+}
+input,textarea{
+    background-color: rgba(125, 161, 201, 0.39);
+    border: none;
+    margin: 10px;
+}
+button{
+    background-color: rgba(125, 161, 201, 0.39);
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+}
+button:hover{
+    background-color: rgba(51, 74, 100, 0.39);;
+}
+.flex{
+    display: flex ;
+    
+    overflow: hidden;
+    
+          
+    /* margin: 10px; */
+}

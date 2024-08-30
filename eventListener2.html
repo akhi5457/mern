@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 20px;
+            margin-top: 200px;
+            height: 100px;
+            /* width: 250px; */
+            justify-content: center;
+            display: flex;
+
+        }
+
+        form {
+            border: 1px solid black;
+
+        }
+
+        input {
+            margin: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+
+        }
+    </style>
+    <div class="form">
+        <form>
+            <input type="text" id="lastname" placeholder="enter your lastname"><span><sup
+                    style="color:red">*</sup></span>
+            <div class="lastnameError"></div><br>
+            <input type="email" id="email" placeholder="eg: a@gmail.com"><span><sup style="color:red">*</sup></span>
+            <div class="emailError"></div><br>
+            <input type="number" id="number" placeholder="eg: 8899887766"><span><sup style="color:red">*</sup></span>
+            <div class="numberError"></div>
+        </form>
+    </div>
+
+    <script>
+        const fError = document.querySelector('#lastname');
+        const fError1 = document.querySelector('#email');
+        const fError2 = document.querySelector('#number');
+        const tvalue = document.querySelector('.lastnameError');
+        const tvalue1 = document.querySelector('.emailError');
+        const tvalue2 = document.querySelector('.numberError');
+        fError.addEventListener('blur', (e) => {
+            if (e.target.value == "") {
+                tvalue.style.color = "red";
+                tvalue.innerHTML = 'field required';
+            }
+            else {
+                if (e.target.value) {
+                    for (let i = 0; i < e.target.value.length; i++) {
+                        for (let j = 0; j < 10; j++) {
+                            if (e.target.value[i] == j) {
+                                tvalue.style.color = "red";
+                                tvalue.innerHTML = 'only character';
+                            }
+                        }
+
+                    }
+                }
+                else {
+                    tvalue.innerHTML = '';
+                }
+            }
+        })
+        fE+rror2.addEventListener('blur', (e) => {
+            if (e.target.value == "") {
+                tvalue2.style.color = "red";
+                tvalue2.innerHTML = 'field required';
+            }
+            else {
+                if (e.target.value.length != 10) {
+                    tvalue2.style.color = "red";
+                    tvalue2.innerHTML = 'check the number';
+                }
+                else {
+                    tvalue2.innerHTML = '';
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
